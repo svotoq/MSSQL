@@ -1,0 +1,5 @@
+USE lab3Univer
+SELECT* FROM STUDENT;
+SELECT Фамилия FROM STUDENT;
+SELECT [Номер зачетки],Фамилия FROM STUDENT;
+SELECT count(*) FROM STUDENT;
