@@ -66,11 +66,41 @@ from	FACULTY inner join GROUPS
 --zad5
 --zad6
 select	GROUPS.PROFESSION[Специальность],
-		PROGRESS.SUBJECT[Дисциплина],
-		avg(PROGRESS.NOTE)[Средняя оценка]
-from	FACULTY inner join GROUPS
-		on FACULTY.FACULTY = GROUPS.FACULTY inner join STUDENT
-		on GROUPS.IDGROUP = STUDENT.IDGROUP inner join PROGRESS
-		on PROGRESS.IDSTUDENT = STUDENT.IDSTUDENT
-where	FACULTY.FACULTY = 'ХТиТ'
-		group by rollup(GROUPS.PROFESSION, PROGRESS.SUBJECT,FACULTY.FACULTY )
+		PROGRESS.SUBJECT[Дисциплины],
+		avg(PROGRESS.NOTE)[Средние оценки]
+from	FACULTY inner join GROUPS on FACULTY.FACULTY = GROUPS.FACULTY
+		inner join STUDENT on STUDENT.IDGROUP = GROUPS.IDGROUP
+		inner join PROGRESS on PROGRESS.IDSTUDENT = STUDENT.IDSTUDENT
+where FACULTY.FACULTY = 'ХТиТ'
+Group by rollup (GROUPS.PROFESSION, PROGRESS.SUBJECT)
+--zad7
+--Group by cube(GROUPS.PROFESSION, PROGRESS.SUBJECT)
+--zad8
+select	GROUPS.PROFESSION[Специальность],
+		PROGRESS.SUBJECT[Дисциплины],
+		avg(PROGRESS.NOTE)[Средние оценки]
+from	FACULTY inner join GROUPS on FACULTY.FACULTY = GROUPS.FACULTY
+		inner join STUDENT on STUDENT.IDGROUP = GROUPS.IDGROUP
+		inner join PROGRESS on PROGRESS.IDSTUDENT = STUDENT.IDSTUDENT
+where FACULTY.FACULTY = 'ХТиТ'
+Group by rollup (GROUPS.PROFESSION, PROGRESS.SUBJECT)
+union all
+--zad 9 
+--intersect
+--zad 10
+--except
+select	GROUPS.PROFESSION[Специальность],
+		PROGRESS.SUBJECT[Дисциплины],
+		avg(PROGRESS.NOTE)[Средние оценки]
+from	FACULTY inner join GROUPS on FACULTY.FACULTY = GROUPS.FACULTY
+		inner join STUDENT on STUDENT.IDGROUP = GROUPS.IDGROUP
+		inner join PROGRESS on PROGRESS.IDSTUDENT = STUDENT.IDSTUDENT
+where FACULTY.FACULTY = 'ТОВ'
+Group by rollup (GROUPS.PROFESSION, PROGRESS.SUBJECT)
+
+--zad 11
+select	PROGRESS.NOTE[Оценка],
+		Count(PROGRESS.IDSTUDENT)[Студентов]
+from	PROGRESS
+group by PROGRESS.NOTE
+having PROGRESS.NOTE = 8 or PROGRESS.NOTE = 9

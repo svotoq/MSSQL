@@ -2,22 +2,22 @@ USE master
 go
 create database UNIVERlab4
 on primary
-(name = N'UNIVER_mdf', filename =N'D:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\lab4\UNIVER.mdf',
+(name = N'UNIVER_mdf', filename =N'E:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\MSSQL\lab4\UNIVER.mdf',
 size = 5MB, maxsize =10MB, filegrowth=1MB),
-(name = N'UNIVER_ndf', filename =N'D:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\lab4\UNIVER.ndf',
+(name = N'UNIVER_ndf', filename =N'E:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\MSSQL\lab4\UNIVER.ndf',
 size = 5MB, maxsize =10MB, filegrowth=10%),
 FILEGROUP G1
-(name = N'UNIVER11_ndf', filename =N'D:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\lab4\UNIVER11.ndf',
+(name = N'UNIVER11_ndf', filename =N'E:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\MSSQL\lab4\UNIVER11.ndf',
 size = 10MB, maxsize =15MB, filegrowth=1MB),
-(name = N'UNIVER12_ndf', filename =N'D:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\lab4\UNIVER12.ndf',
+(name = N'UNIVER12_ndf', filename =N'E:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\MSSQL\lab4\UNIVER12.ndf',
 size = 2MB, maxsize =5MB, filegrowth=1MB),
 FILEGROUP G2
-(name = N'UNIVER21_ndf', filename =N'D:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\lab4\UNIVER21.ndf',
+(name = N'UNIVER21_ndf', filename =N'E:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\MSSQL\lab4\UNIVER21.ndf',
 size = 5MB, maxsize =10MB, filegrowth=1MB),
-(name = N'UNIVER22_ndf', filename =N'D:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\lab4\UNIVER22.ndf',
+(name = N'UNIVER22_ndf', filename =N'E:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\MSSQL\lab4\UNIVER22.ndf',
 size = 2MB, maxsize =5MB, filegrowth=1MB)
 log on
-(name = N'UNIVER_log', filename =N'D:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\lab4\UNIVER.ldf',
+(name = N'UNIVER_log', filename =N'E:\Учеба\БГТУ\2 курс\2 семестр\Базы данных\MSSQL\lab4\UNIVER.ldf',
 size = 5MB, maxsize =UNLIMITED, filegrowth=1MB)
 go 
 
